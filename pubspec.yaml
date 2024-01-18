@@ -54,6 +54,16 @@ flutter:
   assets:
     - assets/images/img.png
     - assets/images/ican.png
+    - assets/images/finall.png
+    - assets/images/Group 1.png
+    - assets/images/Group 2.png
+    - assets/images/Group 3.png
+    - assets/images/Group 7.png
+    - assets/images/Group 25.png
+    - assets/images/logo 1.png
+    - assets/images/Vector.png
+    - assets/images/IMG_0855-copy-2.png
+    - assets/images/intro.png
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
