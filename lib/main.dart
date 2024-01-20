@@ -3,8 +3,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-/// Flutter code sample for [BottomNavigationBar].
-
 void main() => runApp(const BottomNavigationBarExampleApp());
 
 class BottomNavigationBarExampleApp extends StatelessWidget {
@@ -41,7 +39,6 @@ class _BottomNavigationBarExampleState
           Image(
               image: AssetImage(
             "assets/images/img.png",
-            // height:40,
           )),
           SizedBox(
             height: 30,
@@ -110,8 +107,9 @@ class _BottomNavigationBarExampleState
           child: Row(
             children: [
               Image.asset(
-                "assets/images/logo 1.png", height: 20, width: 99,
-                // fit: BoxFit.cover,
+                "assets/images/logo 1.png",
+                height: 20,
+                width: 99,
               ),
             ],
           ),
@@ -123,39 +121,38 @@ class _BottomNavigationBarExampleState
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed, // Fixed
-        backgroundColor: Color(0xff052029),
-        // backgroundColor: Colors.black,
+        backgroundColor: Color(0xff051019),
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
               icon: Icon(
-                Icons.home, size: 45,
-                // color:Color(0xff395161) ,
-              ),
-              label: " "),
-          BottomNavigationBarItem(
-              icon: Icon(
-                Icons.business,
+                Icons.home,
                 size: 45,
               ),
               label: " "),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.school,
-              size: 45,
+              icon: ImageIcon(
+                AssetImage("assets/images/Group 1.png"),
+                size: 40,
+              ),
+              label: " "),
+          BottomNavigationBarItem(
+            icon: ImageIcon(
+              AssetImage("assets/images/Group 2.png"),
+              size: 40,
             ),
             label: " ",
           ),
           BottomNavigationBarItem(
-              icon: Icon(
-                Icons.school,
-                size: 45,
+              icon: ImageIcon(
+                AssetImage("assets/images/Group 3.png"),
+                size: 40,
               ),
               label: " "),
         ],
 
         currentIndex: _selectedIndex,
-        selectedItemColor: Color(0xff05BBF9),
-        unselectedItemColor: Color.fromARGB(255, 82, 117, 139),
+        selectedItemColor: Color(0xff00C4FF),
+        unselectedItemColor: Color(0xff395161),
         onTap: _onItemTapped,
       ),
     );
