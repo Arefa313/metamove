@@ -43,17 +43,19 @@ class _BottomNavigationBarExampleState
             "assets/images/img.png",
             // height:40,
           )),
-            SizedBox(height: 30,),
+          SizedBox(
+            height: 30,
+          ),
           ElevatedButton(
-                 style: ElevatedButton.styleFrom(
-                    primary: Color(0xff05BBF9),
-                    elevation: 3,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)),
-                    minimumSize: const Size(133, 42),
-                    padding: const EdgeInsets.all(15)),
-                    onPressed: (){},
-                    child: Text("join waitlist"),
+            style: ElevatedButton.styleFrom(
+                primary: Color(0xff05BBF9),
+                elevation: 3,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10)),
+                minimumSize: const Size(133, 42),
+                padding: const EdgeInsets.all(15)),
+            onPressed: () {},
+            child: Text("join waitlist"),
           ),
         ],
       ),
@@ -67,12 +69,23 @@ class _BottomNavigationBarExampleState
       ),
     ),
     Container(
+        child: Expanded(
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
+          //  Text("The Meta Jackpot", style: TextStyle(color: Colors.white , fontSize: 10),),
+          Container(
+            width: 152,
+            height: 184,
+            child: Text(
+              'Elevate your Metamove experience with the exciting Meta Jackpot! In addition to the various earning opportunities available within the app, the Meta Jackpot offers you a chance to win big lottery prizes.Enter the lottery by owning in-app assets (sneakers or bicycles) and purchasing tickets within the app. For more information on how to participate and maximize your chances of winning, please refer to the Metamove Whitepaper.',
+              style: TextStyle(color: Colors.white, fontSize: 10),
+            ),
+          ),
           Image(image: AssetImage("assets/images/Group 7.png")),
         ],
       ),
-    ),
+    )),
     Container(
       child: Row(
         children: [
