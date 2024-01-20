@@ -1,3 +1,5 @@
+// import 'dart:html';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -27,37 +29,57 @@ class BottomNavigationBarExample extends StatefulWidget {
 class _BottomNavigationBarExampleState
     extends State<BottomNavigationBarExample> {
   int _selectedIndex = 0;
+//  static final width=30;
+  int height = 40;
   // static TextStyle optionStyle =
   //     TextStyle( fontWeight: FontWeight.bold , height: 50,);
-   List<Widget> _widgetOptions = <Widget>[
-   Container(
-    child:Row(mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Image(image:AssetImage("assets/images/img.png",
-        //   width: 300,
-        // height: 150,
-        // fit: BoxFit.contain,
-        )),
-        
-    ],
-    
-    ),
-   ),
+  List<Widget> _widgetOptions = <Widget>[
     Container(
-    child: Row(
-      children: [
-        Image(image:AssetImage("assets/images/intro.png")),
-        Text("helloe"),
-      ],
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Image(
+              image: AssetImage(
+            "assets/images/img.png",
+            // height:40,
+          )),
+            SizedBox(height: 30,),
+          ElevatedButton(
+                 style: ElevatedButton.styleFrom(
+                    primary: Color(0xff05BBF9),
+                    elevation: 3,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    minimumSize: const Size(133, 42),
+                    padding: const EdgeInsets.all(15)),
+                    onPressed: (){},
+                    child: Text("join waitlist"),
+          ),
+        ],
+      ),
     ),
-   ),
-   Container(
-    child: Row(
-      children: [
-        Image(image:AssetImage("assets/images/Group 7.png")),
-      ],
+    Container(
+      child: Column(
+        children: [
+          Image(image: AssetImage("assets/images/intro.png")),
+          Text("helloe"),
+        ],
+      ),
     ),
-   ),
+    Container(
+      child: Row(
+        children: [
+          Image(image: AssetImage("assets/images/Group 7.png")),
+        ],
+      ),
+    ),
+    Container(
+      child: Row(
+        children: [
+          Image(image: AssetImage("assets/images/Group 7.png")),
+        ],
+      ),
+    ),
   ];
 
   void _onItemTapped(int index) {
@@ -69,44 +91,58 @@ class _BottomNavigationBarExampleState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-         backgroundColor:Colors.black ,
+      backgroundColor: Color(0xff000007),
       appBar: AppBar(
-        leading:Image.asset("assets/images/logo 1.png"),
-        backgroundColor:Colors.black,
+        title: Container(
+          child: Row(
+            children: [
+              Image.asset(
+                "assets/images/logo 1.png", height: 20, width: 99,
+                // fit: BoxFit.cover,
+              ),
+            ],
+          ),
+        ),
+        backgroundColor: Colors.black,
       ),
       body: Center(
-        // child:Column(children: [
-        //   Image(image:AssetImage("assets/images/img.png")),
-        // ],)
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor:Color(0xff051019),
+        type: BottomNavigationBarType.fixed, // Fixed
+        backgroundColor: Color(0xff052029),
+        // backgroundColor: Colors.black,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home, size:40, 
-            // color:Color(0xff395161) ,
+              icon: Icon(
+                Icons.home, size: 45,
+                // color:Color(0xff395161) ,
+              ),
+              label: " "),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.business,
+                size: 45,
+              ),
+              label: " "),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.school,
+              size: 45,
             ),
-             label: " "
-          ),
-        
-            //  padding:EdgeInsets.all(8.0),
-            BottomNavigationBarItem(
-            icon: Icon(Icons.business, size:40, color:Color.fromARGB(255, 143, 143, 143) ,),
-            label: " "
+            label: " ",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.school, size:40, color:Color.fromARGB(255, 143, 143, 143) ,),
-           label: " ",
-           
-          ),
-          //  BottomNavigationBarItem(
-          //   icon: Icon(Icons.school),
-          // ),
+              icon: Icon(
+                Icons.school,
+                size: 45,
+              ),
+              label: " "),
         ],
+
         currentIndex: _selectedIndex,
-        // selectedItemColor: Colors.amber[800],
-        selectedItemColor:Color(0xff05BBF9),
+        selectedItemColor: Color(0xff05BBF9),
+        unselectedItemColor: Color.fromARGB(255, 82, 117, 139),
         onTap: _onItemTapped,
       ),
     );
