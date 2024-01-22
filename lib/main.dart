@@ -31,11 +31,11 @@ class _BottomNavigationBarExampleState
   int height = 40;
   // static TextStyle optionStyle =
   //     TextStyle( fontWeight: FontWeight.bold , height: 50,);
-  List<Widget> _widgetOptions = <Widget>[
+  List<Widget>  _widgetOptions = <Widget>[
     Container(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
-        children: [
+       children: [
           Image(
               image: AssetImage(
             "assets/images/img.png",
