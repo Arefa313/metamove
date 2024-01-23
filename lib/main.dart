@@ -4,10 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const BottomNavigationBarExampleApp());
-
 class BottomNavigationBarExampleApp extends StatelessWidget {
   const BottomNavigationBarExampleApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
@@ -15,15 +13,12 @@ class BottomNavigationBarExampleApp extends StatelessWidget {
     );
   }
 }
-
 class BottomNavigationBarExample extends StatefulWidget {
   const BottomNavigationBarExample({super.key});
-
   @override
   State<BottomNavigationBarExample> createState() =>
       _BottomNavigationBarExampleState();
 }
-
 class _BottomNavigationBarExampleState
     extends State<BottomNavigationBarExample> {
   int _selectedIndex = 0;
@@ -31,11 +26,11 @@ class _BottomNavigationBarExampleState
   int height = 40;
   // static TextStyle optionStyle =
   //     TextStyle( fontWeight: FontWeight.bold , height: 50,);
-  List<Widget>  _widgetOptions = <Widget>[
+  List<Widget> _widgetOptions = <Widget>[
     Container(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
-       children: [
+        children: [
           Image(
               image: AssetImage(
             "assets/images/img.png",
@@ -58,12 +53,45 @@ class _BottomNavigationBarExampleState
       ),
     ),
     Container(
-      child: Column(
+      child: SingleChildScrollView(
+          child: Column(
         children: [
-          Image(image: AssetImage("assets/images/intro.png")),
-          Text("helloe"),
+          Row(children: [
+            Image(image: AssetImage("assets/images/intro.png")),
+            Container(
+              width: 152,
+              height: 194,
+              child: Text(
+                'Metamove is a groundbreaking AI-driven move-to-earn Web3 platform that masterfully combines social-fi and game-fi aspects to motivate healthier lifestyles. Harnessing state-of-the-art AI technology, Metamove delivers personalized exercise routines while promoting engaging user experiences. While earning tokens and exercise, it enables users to enjoy team play with friends using the integrated voice chat functionality, and benefit from AI’s potential to reshape your fitness journey with Metamove’s trailblazing fusion of health and blockchain innovations.',
+                style: TextStyle(color: Colors.white, fontSize: 10),
+              ),
+            ),
+          ]),
+          Image(
+              image: AssetImage(
+            "assets/images/IMG_0855-copy-2.png",
+          )),
+          Text(
+            "Cycling and Walking",
+            style: TextStyle(color: Colors.white, fontSize: 10),
+          ),
+          Text(
+            "Discover a new way to stay active and motivated with Metamove. Equip yourself with stunning, in-app NFT sneakers and bikes, and start cycling, walking, jogging, or running. Earn in-app tokens while engaging in physical activities and exercises individually or with friends across the globe.",
+            style: TextStyle(color: Colors.white, fontSize: 10),
+          ),
+          Row(children: [
+            Image(image: AssetImage("assets/images/finall.png")),
+            Container(
+              width: 122,
+              height: 194,
+              child: Text(
+                'Metamove is a groundbreaking AI-driven move-to-earn Web3 platform that masterfully combines social-fi and game-fi aspects to motivate healthier lifestyles. Harnessing state-of-the-art AI technology, Metamove delivers personalized exercise routines while promoting engaging user experiences. While earning tokens and exercise, it enables users to enjoy team play with friends using the integrated voice chat functionality, and benefit from AI’s potential to reshape your  fitness journey with Metamove’s trailblazing fusion of health and blockchain innovations.',
+                style: TextStyle(color: Colors.white, fontSize: 10),
+              ),
+            ),
+          ]),
         ],
-      ),
+      )),
     ),
     Container(
         child: Expanded(
@@ -73,7 +101,7 @@ class _BottomNavigationBarExampleState
           //  Text("The Meta Jackpot", style: TextStyle(color: Colors.white , fontSize: 10),),
           Container(
             width: 152,
-            height: 184,
+            height: 194,
             child: Text(
               'Elevate your Metamove experience with the exciting Meta Jackpot! In addition to the various earning opportunities available within the app, the Meta Jackpot offers you a chance to win big lottery prizes.Enter the lottery by owning in-app assets (sneakers or bicycles) and purchasing tickets within the app. For more information on how to participate and maximize your chances of winning, please refer to the Metamove Whitepaper.',
               style: TextStyle(color: Colors.white, fontSize: 10),
@@ -84,12 +112,15 @@ class _BottomNavigationBarExampleState
       ),
     )),
     Container(
-      child: Row(
+        child: Center(
+            child: SingleChildScrollView(
+      child: Column(
         children: [
-          Image(image: AssetImage("assets/images/Group 7.png")),
+          Image(image: AssetImage("assets/images/Group 24.png")),
+          Image(image: AssetImage("assets/images/Group 25.png")),
         ],
       ),
-    ),
+    ))),
   ];
 
   void _onItemTapped(int index) {
@@ -149,7 +180,6 @@ class _BottomNavigationBarExampleState
               ),
               label: " "),
         ],
-
         currentIndex: _selectedIndex,
         selectedItemColor: Color(0xff00C4FF),
         unselectedItemColor: Color(0xff395161),
