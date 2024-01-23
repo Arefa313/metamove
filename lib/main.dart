@@ -28,7 +28,8 @@ class _BottomNavigationBarExampleState
   //     TextStyle( fontWeight: FontWeight.bold , height: 50,);
   List<Widget> _widgetOptions = <Widget>[
     Container(
-      child: Column(
+      margin: EdgeInsets.symmetric(vertical: 60.0),
+    child:Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Image(
@@ -50,11 +51,12 @@ class _BottomNavigationBarExampleState
             child: Text("join waitlist"),
           ),
         ],
-      ),
-    ),
+      )),
+    
     Container(
+      padding: EdgeInsets.symmetric(vertical: 60.0),
       child: SingleChildScrollView(
-          child: Column(
+          child: Column( 
         children: [
           Row(children: [
             Image(image: AssetImage("assets/images/intro.png")),
@@ -91,9 +93,10 @@ class _BottomNavigationBarExampleState
             ),
           ]),
         ],
-      )),
-    ),
+      ))),
+  
     Container(
+      margin: EdgeInsets.symmetric(vertical: 60.0),
         child: Expanded(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -112,6 +115,7 @@ class _BottomNavigationBarExampleState
       ),
     )),
     Container(
+      margin: EdgeInsets.only(top: 60.0),
         child: Center(
             child: SingleChildScrollView(
       child: Column(
