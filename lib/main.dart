@@ -101,7 +101,7 @@ class _BottomNavigationBarExampleState
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          //  Text("The Meta Jackpot", style: TextStyle(color: Colors.white , fontSize: 10),),
+           Text("The Meta Jackpot", style: TextStyle(color: Colors.white , fontSize: 10),),
           Container(
             width: 152,
             height: 194,
